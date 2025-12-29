@@ -86,3 +86,15 @@ crash.*.log
 *.tfvars
 *.tfvars.json
 .terraform.lock.hcl
+
+# Terraform
+**/.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
+
+# Node
+node_modules/

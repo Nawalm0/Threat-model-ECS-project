@@ -1,7 +1,15 @@
+# Compiled files
+*.tfstate
+*.tfstate.backup
+.terraform.tfstate.lock.info
+.terraform.lock.hcl
+
+# Module directory
+.terraform/
+
 .DS_Store
 .env
 !/.gitattributes
-!/package.json
 !/LICENSE
 !/.npmignore
 logs
@@ -76,25 +84,3 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
-
-# Terraform
-**/.terraform/
-*.tfstate
-*.tfstate.*
-crash.log
-crash.*.log
-*.tfvars
-*.tfvars.json
-.terraform.lock.hcl
-
-# Terraform
-**/.terraform/
-*.tfstate
-*.tfstate.*
-crash.log
-crash.*.log
-*.tfvars
-*.tfvars.json
-
-# Node
-node_modules/

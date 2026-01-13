@@ -40,6 +40,5 @@ USER appuser
 
 EXPOSE 3000
 
-
-CMD ["serve", "-s", "build", "-l", "0.0.0.0:3000"]
+CMD ["serve", "-s", "build", "-l", "tcp://0.0.0.0:3000"]
  

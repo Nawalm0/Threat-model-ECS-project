@@ -1,0 +1,594 @@
+{
+    "services": [
+        {
+            "serviceArn": "arn:aws:ecs:eu-west-2:751146246930:service/threatcomposer-cluster/threatcomposer-service",
+            "serviceName": "threatcomposer-service",
+            "clusterArn": "arn:aws:ecs:eu-west-2:751146246930:cluster/threatcomposer-cluster",
+            "loadBalancers": [
+                {
+                    "targetGroupArn": "arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0",
+                    "containerName": "threatcomposer",
+                    "containerPort": 3000
+                }
+            ],
+            "serviceRegistries": [],
+            "status": "ACTIVE",
+            "desiredCount": 1,
+            "runningCount": 0,
+            "pendingCount": 1,
+            "launchType": "FARGATE",
+            "platformVersion": "LATEST",
+            "platformFamily": "Linux",
+            "taskDefinition": "arn:aws:ecs:eu-west-2:751146246930:task-definition/threatcomposer-task:3",
+            "deploymentConfiguration": {
+                "deploymentCircuitBreaker": {
+                    "enable": false,
+                    "rollback": false
+                },
+                "maximumPercent": 200,
+                "minimumHealthyPercent": 0,
+                "strategy": "ROLLING",
+                "bakeTimeInMinutes": 0
+            },
+            "deployments": [
+                {
+                    "id": "ecs-svc/8964185328557334903",
+                    "status": "PRIMARY",
+                    "taskDefinition": "arn:aws:ecs:eu-west-2:751146246930:task-definition/threatcomposer-task:3",
+                    "desiredCount": 1,
+                    "pendingCount": 1,
+                    "runningCount": 0,
+                    "failedTasks": 0,
+                    "createdAt": "2026-01-13T09:09:33.364000+00:00",
+                    "updatedAt": "2026-01-13T09:10:43.849000+00:00",
+                    "launchType": "FARGATE",
+                    "platformVersion": "1.4.0",
+                    "platformFamily": "Linux",
+                    "networkConfiguration": {
+                        "awsvpcConfiguration": {
+                            "subnets": [
+                                "subnet-046166409526e772a",
+                                "subnet-0255d28e21d9158a8"
+                            ],
+                            "securityGroups": [
+                                "sg-01f7835d9b9da60fa"
+                            ],
+                            "assignPublicIp": "ENABLED"
+                        }
+                    },
+                    "rolloutState": "IN_PROGRESS",
+                    "rolloutStateReason": "ECS deployment ecs-svc/8964185328557334903 in progress."
+                }
+            ],
+            "roleArn": "arn:aws:iam::751146246930:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+            "events": [
+                {
+                    "id": "d98e99ab-219a-453d-b095-9906d2539986",
+                    "createdAt": "2026-01-13T09:11:02.868000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task da614ea20ed14be9b9755ce88199a49d)."
+                },
+                {
+                    "id": "d2d5a263-56be-4601-a381-e30b5b031d4f",
+                    "createdAt": "2026-01-13T09:10:41.232000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/8964185328557334903) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "936f4ee8-e7de-48f6-bc87-8f7f69c2a969",
+                    "createdAt": "2026-01-13T09:10:41.227000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "46608068-7ef4-4d91-b6f7-04b9ee7edb82",
+                    "createdAt": "2026-01-13T09:10:29.798000+00:00",
+                    "message": "(service threatcomposer-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "88f0ecac-c6d6-4929-8719-04ed49f4f58d",
+                    "createdAt": "2026-01-13T09:10:10.550000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task 9df8976c80214768a1613eba4753ae0b)."
+                },
+                {
+                    "id": "83513912-f840-4753-bb52-104b27946e10",
+                    "createdAt": "2026-01-13T09:09:58.328000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/6181818447756300088) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "6b3cbabb-0ef2-4a62-9c9b-d863465e7427",
+                    "createdAt": "2026-01-13T09:09:58.323000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "be2d596a-51f3-4856-a3ad-556c5f8d2422",
+                    "createdAt": "2026-01-13T09:09:49.088000+00:00",
+                    "message": "(service threatcomposer-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "281d91ce-66a0-48ca-811b-fd6f0306a4ef",
+                    "createdAt": "2026-01-13T09:09:27.783000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task 6ea12c987a384ed7b920fb06baf08bbc)."
+                },
+                {
+                    "id": "c7cf3d99-fc44-4c19-ada3-d4857190f375",
+                    "createdAt": "2026-01-13T09:06:33.669000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "90882560-a6ec-4f6c-8331-1ce3b66cee0b",
+                    "createdAt": "2026-01-13T09:06:33.574000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/0319913060311692442) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "799aaf55-35d9-4d84-aff8-8b3323472973",
+                    "createdAt": "2026-01-13T09:06:33.570000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "393bee41-cb39-48d6-9c90-5673940b3153",
+                    "createdAt": "2026-01-13T09:05:53.330000+00:00",
+                    "message": "(service threatcomposer-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "67da7092-ac4f-4740-be4a-a5abcc38c5ec",
+                    "createdAt": "2026-01-13T09:05:24.704000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task 37ff702f43854b24a0d664785232acb0)."
+                },
+                {
+                    "id": "07cf74b7-a3b9-459c-849f-777bbe39b1d0",
+                    "createdAt": "2026-01-13T09:04:06.738000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "1f3488bc-0f0f-4fcd-9722-99b4697da9be",
+                    "createdAt": "2026-01-13T09:04:06.647000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/0319913060311692442) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "34b48d05-6ab3-4a04-ad77-9125c1592f65",
+                    "createdAt": "2026-01-13T09:04:06.643000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "9b71060f-b478-4d44-8ad5-6c39dfa8462d",
+                    "createdAt": "2026-01-13T09:03:27.324000+00:00",
+                    "message": "(service threatcomposer-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "b94b1ada-2e9e-4d75-a366-48770882b56c",
+                    "createdAt": "2026-01-13T09:02:59.973000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task 0f3ac0eb13d6405786cd1b3f3bf4a8ee)."
+                },
+                {
+                    "id": "953df482-a21d-4bfa-a2d1-be1b73d5dabf",
+                    "createdAt": "2026-01-13T09:00:11.353000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/0319913060311692442) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "977a28bc-2344-423d-8df0-2ea11fd7e42e",
+                    "createdAt": "2026-01-13T09:00:11.349000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "44a3d029-3782-4344-adff-85d60269be74",
+                    "createdAt": "2026-01-13T09:00:01.766000+00:00",
+                    "message": "(service threatcomposer-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "6d0dce00-6762-44c6-a505-d66cc5d2fcda",
+                    "createdAt": "2026-01-13T08:59:42.915000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task 040d6bc735fc475b9a5be1e41088732b)."
+                },
+                {
+                    "id": "20fa9706-08c4-4a31-804a-4e5002da1f45",
+                    "createdAt": "2026-01-13T08:57:45.438000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/0319913060311692442) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "22b293c4-dc58-4877-94bc-80b02384f5a5",
+                    "createdAt": "2026-01-13T08:57:45.434000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "ffabd733-be15-449d-860d-8b7216d2a125",
+                    "createdAt": "2026-01-13T08:57:25.533000+00:00",
+                    "message": "(service threatcomposer-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "16b1f5b3-1ccd-4a71-8f1d-5538bad19fb2",
+                    "createdAt": "2026-01-13T08:57:07.011000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task 83f97680a9734ec99ab450ad20fc2633)."
+                },
+                {
+                    "id": "fc57722d-b936-406f-a886-982a0a398313",
+                    "createdAt": "2026-01-13T08:54:28.631000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "cc13d804-b7ab-4259-9d0c-d4ed2ff42cc4",
+                    "createdAt": "2026-01-13T08:54:28.554000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/0319913060311692442) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "431d5864-c0ec-4ffc-b796-3977212acc01",
+                    "createdAt": "2026-01-13T08:54:28.550000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "7359ffd5-9c42-4423-9542-e72d5ec476e8",
+                    "createdAt": "2026-01-13T08:53:49.749000+00:00",
+                    "message": "(service threatcomposer-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "4c8a004e-617d-4cf6-bbf8-6b7ea67763d5",
+                    "createdAt": "2026-01-13T08:53:21.566000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task cc6696bd98eb473ea1a556cac63ec0ae)."
+                },
+                {
+                    "id": "14ff8fa3-695f-4552-925e-6c5567af918f",
+                    "createdAt": "2026-01-13T08:53:00.644000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/0319913060311692442) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "6d5dc0be-4cb5-4277-b078-184548d5f8ef",
+                    "createdAt": "2026-01-13T08:53:00.639000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "d751144e-850b-498f-9f07-79fef4348399",
+                    "createdAt": "2026-01-13T08:52:00.040000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task 7debcd3c03324a95a5079e11fa42b29c)."
+                },
+                {
+                    "id": "dd2b8670-f0ac-4f43-9b11-0ff9a5c757fe",
+                    "createdAt": "2026-01-13T08:51:47.820000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/0319913060311692442) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "ac1139fd-b9c0-4413-94fb-d414dfccde19",
+                    "createdAt": "2026-01-13T08:51:47.816000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "420915eb-691c-4b02-a344-49d2a47ba155",
+                    "createdAt": "2026-01-13T08:51:39.102000+00:00",
+                    "message": "(service threatcomposer-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "e3b20cf6-6542-4922-91de-865e96abae2e",
+                    "createdAt": "2026-01-13T08:51:18.765000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task 165e8b8ee1cb4ddbb400943a6440adef)."
+                },
+                {
+                    "id": "75156f24-5ea6-4ce0-a569-8e69d3cbbba1",
+                    "createdAt": "2026-01-13T08:46:48.250000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/0319913060311692442) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "487e6902-abf8-41e5-8265-404f9d5f654c",
+                    "createdAt": "2026-01-13T08:46:48.244000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "a4ca5a32-bc91-44be-801e-c86e16344bd2",
+                    "createdAt": "2026-01-13T08:46:28.963000+00:00",
+                    "message": "(service threatcomposer-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "095b132e-b82e-4b01-ac04-041ae6a0dfc5",
+                    "createdAt": "2026-01-13T08:46:10.313000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task d6f8010c84ac49c181230ffdcd7e80fc)."
+                },
+                {
+                    "id": "c264c9e6-1c2f-4e95-bb27-675ae2ca5b55",
+                    "createdAt": "2026-01-13T08:46:09.643000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/0319913060311692442) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "fcef1296-da2f-4337-8249-328863091afa",
+                    "createdAt": "2026-01-13T08:46:09.638000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "d37c5625-e0d8-4abc-ad13-51e472cdcd48",
+                    "createdAt": "2026-01-13T08:46:00.060000+00:00",
+                    "message": "(service threatcomposer-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "36622130-4e6f-45ba-a736-1a20bc333e18",
+                    "createdAt": "2026-01-13T08:45:33.123000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task e4e05c3dcccf49f782955967ac0b1fdc)."
+                },
+                {
+                    "id": "fe00c6f0-edf0-464d-9b77-1b86e435a0ae",
+                    "createdAt": "2026-01-13T08:45:22.098000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/0319913060311692442) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "85a1e4d0-2ee4-4628-8443-82c5a06b1a3f",
+                    "createdAt": "2026-01-13T08:45:22.070000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "d2b719bf-4e9f-44f1-ad2f-9812deecab55",
+                    "createdAt": "2026-01-13T08:39:49.119000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task 4bc0938e8e2c46a8b6aa0c565a97f4c7)."
+                },
+                {
+                    "id": "04d1aaa1-601f-44af-ab0e-2f39c7a17caf",
+                    "createdAt": "2026-01-13T08:39:28.616000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/0319913060311692442) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "872a6417-6f02-4d56-b8fd-309144a43ac6",
+                    "createdAt": "2026-01-13T08:39:28.612000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "9f51881e-6a02-4a4c-800f-10e95db8a7d7",
+                    "createdAt": "2026-01-13T08:38:29.505000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task 4c807b2874bf4433a2adad0275812d34)."
+                },
+                {
+                    "id": "b500288d-ba1f-4f0d-bc9d-ac1255009d39",
+                    "createdAt": "2026-01-13T08:38:19.417000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "b625a713-cb8e-4e41-a142-3f3cc71e9997",
+                    "createdAt": "2026-01-13T08:38:19.359000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/0319913060311692442) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "1d2c744d-fb95-4129-a833-4fa45e607e1a",
+                    "createdAt": "2026-01-13T08:38:19.353000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "e53f7ab5-a695-4082-a2f8-cf3e3fc537a2",
+                    "createdAt": "2026-01-13T08:37:41.348000+00:00",
+                    "message": "(service threatcomposer-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "43afd947-e0ae-464d-bbc8-8a6c4446410b",
+                    "createdAt": "2026-01-13T08:37:20.652000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task 7c7c643bf6ec47ea9e969d8fe4df569c)."
+                },
+                {
+                    "id": "704e3b50-2fca-47d5-b036-a2e01c4e5395",
+                    "createdAt": "2026-01-13T08:35:14.427000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/3849918694898170294) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "0e0fc3f8-21bf-4bc4-ae36-5ec7ff6d1e96",
+                    "createdAt": "2026-01-13T08:35:13.103000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "912f2fa0-39f2-4c43-aaed-742740fd7745",
+                    "createdAt": "2026-01-13T08:35:03.821000+00:00",
+                    "message": "(service threatcomposer-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "d728b6e3-114e-4b28-8039-edc14d459677",
+                    "createdAt": "2026-01-13T08:34:53.308000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/3849918694898170294) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "46063c10-3e37-4de3-a273-937c677a985d",
+                    "createdAt": "2026-01-13T08:34:53.302000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "83ea2f61-b9a7-4d70-a3ae-62b0bc2afed8",
+                    "createdAt": "2026-01-13T08:34:43.196000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task b4261f9fb5a64dacb658f9e9fd38b3e3)."
+                },
+                {
+                    "id": "879d4db3-0236-43fe-a89a-03b1491a57d5",
+                    "createdAt": "2026-01-13T08:34:33.713000+00:00",
+                    "message": "(service threatcomposer-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "3b40fc2b-d449-402c-bad1-8b8d00658a8b",
+                    "createdAt": "2026-01-13T08:34:14.754000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task 87f0ea2e5636410a85ae5b73326f66fc)."
+                },
+                {
+                    "id": "5e61cb37-c986-49af-9ab4-170664a0333d",
+                    "createdAt": "2026-01-13T08:34:04.272000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/3849918694898170294) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "9290a988-c23b-4064-9923-1213158595d0",
+                    "createdAt": "2026-01-13T08:34:04.241000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "277dc920-60e2-47af-bdda-c1299ca1ffc6",
+                    "createdAt": "2026-01-13T08:33:06.275000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task 84ba4e80ff254803b0aee8f65a38b6e1)."
+                },
+                {
+                    "id": "f55bea31-b292-4bc9-b2c3-7cdae05b8ff0",
+                    "createdAt": "2026-01-13T08:28:28.800000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/3849918694898170294) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "d774d586-db35-42c9-a169-9d545e2cfe26",
+                    "createdAt": "2026-01-13T08:28:28.791000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "1dec9779-63b5-4a8c-a856-3a6100d66b07",
+                    "createdAt": "2026-01-13T08:28:19.767000+00:00",
+                    "message": "(service threatcomposer-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "6916e064-45d5-4c2e-bf3f-f8f72b6b01df",
+                    "createdAt": "2026-01-13T08:27:59.795000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task 51997923a6074410a491727caaf1a58a)."
+                },
+                {
+                    "id": "18299a89-0dae-42cb-9bc1-c1ebdfa23666",
+                    "createdAt": "2026-01-13T08:27:49.076000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "3e256476-5a5e-48d2-a04a-7af1fe108d88",
+                    "createdAt": "2026-01-13T08:27:48.963000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/3849918694898170294) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "6ed83cc5-cfee-4bca-aca6-be5431365422",
+                    "createdAt": "2026-01-13T08:27:48.959000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "26a0e028-df7e-489b-a79c-41834c6a7dc2",
+                    "createdAt": "2026-01-13T08:27:07.577000+00:00",
+                    "message": "(service threatcomposer-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "06bec528-7282-4959-9f35-3c5a068c04e9",
+                    "createdAt": "2026-01-13T08:26:40.738000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task 78ace120a189464dad4b6940721bdb3a)."
+                },
+                {
+                    "id": "ac2ffecf-3383-496e-a143-a9c8b1a22bb5",
+                    "createdAt": "2026-01-13T08:26:20.790000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/3849918694898170294) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "47470835-0b41-481d-9043-929895248080",
+                    "createdAt": "2026-01-13T08:26:20.759000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "f4750898-b7f1-46de-aa46-b6b75180a36e",
+                    "createdAt": "2026-01-13T08:25:20.619000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task 1ce750fba8a348b5b59f00863dfd993d)."
+                },
+                {
+                    "id": "0c269e7a-9cf2-4840-ae43-43f525294d85",
+                    "createdAt": "2026-01-13T08:25:01.137000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/3849918694898170294) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "00683826-84e4-4b51-841f-f87868054210",
+                    "createdAt": "2026-01-13T08:25:01.123000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "8b0c33f4-4ebd-455e-aa87-f0d6b8ea2dd2",
+                    "createdAt": "2026-01-13T08:24:03.084000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task f97a4562d8454f70bff9418243dd58e4)."
+                },
+                {
+                    "id": "f698fa62-95b2-41dd-b8ea-a565aa531af4",
+                    "createdAt": "2026-01-13T08:21:04.305000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "03a7fce0-4894-4f86-b0a3-4efe76dcaef7",
+                    "createdAt": "2026-01-13T08:21:04.198000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/3849918694898170294) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "3d4bf478-5096-4d58-8741-28c9bc8a6bd1",
+                    "createdAt": "2026-01-13T08:21:04.191000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "460fb884-0281-4d45-b4ce-de3bbcbd8e83",
+                    "createdAt": "2026-01-13T08:20:25.367000+00:00",
+                    "message": "(service threatcomposer-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "db99f18e-594d-4333-b90d-09651439cba1",
+                    "createdAt": "2026-01-13T08:19:56.035000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task ade93d9a60044f0a93724f0cb67fe77b)."
+                },
+                {
+                    "id": "3bb29289-cec2-4501-84b8-f3b64a2bccd1",
+                    "createdAt": "2026-01-13T08:18:47.751000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "42b8b793-48e4-4224-97a0-b0d0d6d4154f",
+                    "createdAt": "2026-01-13T08:18:47.671000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/3849918694898170294) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "d501496c-0148-447b-8ff5-7565a3011d3e",
+                    "createdAt": "2026-01-13T08:18:47.666000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "f9f1cf6e-3790-42a0-8eec-b0c1414136b5",
+                    "createdAt": "2026-01-13T08:18:07.876000+00:00",
+                    "message": "(service threatcomposer-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "f65b7cfe-4723-4739-a8ea-a1a46e9fb0f5",
+                    "createdAt": "2026-01-13T08:17:39.578000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task 9b7667d9ea03433e86d5f459e28d16a5)."
+                },
+                {
+                    "id": "35ba4a70-6ad5-47ee-b9c0-ce85fc1788c4",
+                    "createdAt": "2026-01-13T08:17:18.658000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/3849918694898170294) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "15764359-3c10-469b-b456-0ebdcd40e7fe",
+                    "createdAt": "2026-01-13T08:17:18.652000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "692e7fb2-3fa3-433d-a73f-e2afa530ea4c",
+                    "createdAt": "2026-01-13T08:16:19.783000+00:00",
+                    "message": "(service threatcomposer-service) has started 1 tasks: (task a938eef511ae4134803310d99086dcb3)."
+                },
+                {
+                    "id": "c5b48a05-b9e7-45b2-a356-372aea40fdb2",
+                    "createdAt": "2026-01-13T08:14:31.765000+00:00",
+                    "message": "(service threatcomposer-service, taskSet ecs-svc/3849918694898170294) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "50fc3c35-0fa6-4986-8eae-efa370266fce",
+                    "createdAt": "2026-01-13T08:14:31.760000+00:00",
+                    "message": "(service threatcomposer-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                },
+                {
+                    "id": "8d36ce14-2129-4be3-9e66-8651e3cb1deb",
+                    "createdAt": "2026-01-13T08:14:13.331000+00:00",
+                    "message": "(service threatcomposer-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-2:751146246930:targetgroup/threatcomposer-tg/2ab9e3a207fe6be0)"
+                }
+            ],
+            "createdAt": "2026-01-12T15:45:03.306000+00:00",
+            "placementConstraints": [],
+            "placementStrategy": [],
+            "networkConfiguration": {
+                "awsvpcConfiguration": {
+                    "subnets": [
+                        "subnet-046166409526e772a",
+                        "subnet-0255d28e21d9158a8"
+                    ],
+                    "securityGroups": [
+                        "sg-01f7835d9b9da60fa"
+                    ],
+                    "assignPublicIp": "ENABLED"
+                }
+            },
+            "healthCheckGracePeriodSeconds": 60,
+            "schedulingStrategy": "REPLICA",
+            "deploymentController": {
+                "type": "ECS"
+            },
+            "createdBy": "arn:aws:iam::751146246930:user/Nawalay",
+            "enableECSManagedTags": false,
+            "propagateTags": "NONE",
+            "enableExecuteCommand": false,
+            "availabilityZoneRebalancing": "ENABLED"
+        }
+    ],
+    "failures": []
+}

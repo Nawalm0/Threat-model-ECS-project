@@ -21,42 +21,42 @@ resource "aws_ecs_task_definition" "this" {
   execution_role_arn       = var.execution_role_arn
 
   container_definitions = jsonencode([
-  {
-    name      = var.container_name
-    image     = var.image_url
-    essential = true
-    
-    environment = [
-      {
-        name  = "HOST"
-        value = "0.0.0.0"
-      },
-      {
-        name  = "PORT"
-        value = "3000"
-      }
-    ]
-    
-    portMappings = [
-      {
-        containerPort = 3000
-        hostPort      = 3000
-        protocol      = "tcp"
-      }
-    ]
-    
-    
-    logConfiguration = {
-      logDriver = "awslogs"
-      options = {
-        "awslogs-group"         = "/ecs/threatcomposer"
-        "awslogs-region"        = "eu-west-2"
-        "awslogs-stream-prefix" = "ecs"
+    {
+      name      = var.container_name
+      image     = var.image_url
+      essential = true
+
+      environment = [
+        {
+          name  = "HOST"
+          value = "0.0.0.0"
+        },
+        {
+          name  = "PORT"
+          value = "3000"
+        }
+      ]
+
+      portMappings = [
+        {
+          containerPort = 3000
+          hostPort      = 3000
+          protocol      = "tcp"
+        }
+      ]
+
+
+      logConfiguration = {
+        logDriver = "awslogs"
+        options = {
+          "awslogs-group"         = "/ecs/threatcomposer"
+          "awslogs-region"        = "eu-west-2"
+          "awslogs-stream-prefix" = "ecs"
+        }
       }
     }
-  }
-])
-  
+  ])
+
 }
 
 

@@ -1,4 +1,5 @@
 variable "domain_name" {
-  type = string
+  type    = string
+  default = "tm.nawal.uk"
 }
 

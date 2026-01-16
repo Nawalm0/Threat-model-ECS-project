@@ -13,14 +13,31 @@ variable "public_subnet_ids" {
 variable "alb_security_group_id" {
   type = string
 }
-
+variable "environment" {
+  type = string
+}
 variable "target_group_port" {
-  type        = number
-  description = "Port your container listens on"
+  type = number
 }
 
 variable "health_check_path" {
-  type        = string
-  description = "Health check path for your app"
-  default     = "/"
+  type = string
+}
+
+
+variable "https_port" {
+  description = "HTTPS port for the load balancer listener"
+  type        = number
+  default     = 443
+}
+
+variable "http_port" {
+  description = "HTTP port for the load balancer listener"
+  type        = number
+  default     = 80
+}
+
+variable "certificate_arn" {
+  type = string
+
 }

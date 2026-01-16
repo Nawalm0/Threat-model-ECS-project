@@ -64,3 +64,28 @@ variable "health_check_path" {
   description = "Health check path for your app"
   default     = "/"
 }
+
+
+
+variable "http_port" {
+  description = "HTTP port for the load balancer listener"
+  type        = number
+  default     = 80
+}
+
+variable "ssl_policy" {
+  description = "SSL policy for the HTTPS listener"
+  type        = string
+  default     = "ELBSecurityPolicy-2016-08"
+}
+
+variable "redirect_status_code" {
+  description = "HTTP status code for redirect from HTTP to HTTPS"
+  type        = string
+  default     = "HTTP_301"
+
+  validation {
+    condition     = contains(["HTTP_301", "HTTP_302"], var.redirect_status_code)
+    error_message = "Status code must be HTTP_301 (permanent) or HTTP_302 (temporary)."
+  }
+}

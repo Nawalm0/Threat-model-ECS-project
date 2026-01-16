@@ -25,12 +25,17 @@ module "alb" {
   source = "./modules/alb"
 
   project_name          = var.project_name
+  environment           = var.environment
   vpc_id                = module.vpc.vpc_id
   public_subnet_ids     = module.vpc.public_subnet_ids
   alb_security_group_id = module.security_groups.alb_sg_id
 
   target_group_port = var.container_port
   health_check_path = "/"
+  certificate_arn   = module.acm.certificate_arn
+  http_port         = var.http_port
+
+
 }
 
 
@@ -62,3 +67,4 @@ module "acm" {
   source      = "./modules/acm"
   domain_name = var.domain_name
 }
+

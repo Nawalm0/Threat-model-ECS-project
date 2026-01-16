@@ -7,7 +7,6 @@ resource "aws_lb" "this" {
   subnets         = var.public_subnet_ids
 }
 
-
 resource "aws_lb_target_group" "arn" {
   name        = "${var.project_name}-tg"
   port        = var.target_group_port
@@ -23,7 +22,7 @@ resource "aws_lb_target_group" "arn" {
     timeout             = 5
     healthy_threshold   = 2
     unhealthy_threshold = 2
-    port = "traffic-port"
+    port                = "traffic-port"
   }
 }
 
@@ -33,8 +32,25 @@ resource "aws_lb_listener" "http" {
   protocol          = "HTTP"
 
   default_action {
+    type = "redirect"
+
+    redirect {
+      protocol    = "HTTPS"
+      port        = "443"
+      status_code = "HTTP_301"
+    }
+  }
+}
+
+resource "aws_lb_listener" "https" {
+  load_balancer_arn = aws_lb.this.arn
+  port              = 443
+  protocol          = "HTTPS"
+  ssl_policy        = "ELBSecurityPolicy-2016-08"
+  certificate_arn   = var.certificate_arn
+
+  default_action {
     type             = "forward"
     target_group_arn = aws_lb_target_group.arn.arn
   }
 }
-

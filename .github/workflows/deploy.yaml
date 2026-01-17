@@ -5,7 +5,7 @@
     branches: [main]
     paths:
       - "Terraform/**"
-      - ".github/workflows/terraform.yml"
+      - ".github/workflows/deploy.yml"
   
   workflow_dispatch:
 

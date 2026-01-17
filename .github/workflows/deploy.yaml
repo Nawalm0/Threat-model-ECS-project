@@ -41,13 +41,21 @@
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.6.6
+      - name: Download terraform.tfvars
+  run: |
+    aws s3 cp \
+      s3://terraform-state-nawal/config/dev/terraform.tfvars \
+      Terraform/terraform.tfvars
 
-      - name: Terraform init
-        run: terraform init
+- name: Terraform init
+  run: terraform init
+  working-directory: Terraform
 
-      - name: Terraform plan
-        run: terraform plan -no-color -out=tfplan
+- name: Terraform plan
+  run: terraform plan
+  working-directory: Terraform
 
-      - name: Terraform apply (main only)
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -auto-approve  tfplan
+- name: Terraform apply
+  if: github.ref == 'refs/heads/main'
+  run: terraform apply -auto-approve
+  working-directory: Terraform

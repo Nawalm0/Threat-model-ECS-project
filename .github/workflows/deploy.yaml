@@ -1,15 +1,7 @@
  name: Terraform Deploy
 
  on:
-  pull_request:
-    paths:
-      - "terraform/**"
-      - ".github/workflows/terraform.yml"
-  push:
-    branches: ["main"]
-    paths:
-      - "terraform/**"
-      - ".github/workflows/terraform.yml"
+  
   workflow_dispatch:
 
  permissions:
@@ -17,16 +9,18 @@
   contents: read
   pull-requests: write
 
- env:
-  AWS_REGION: ${{ secrets.AWS_REGION }}
 
 
  jobs:
   terraform:
     runs-on: ubuntu-latest
+
+    env:
+     AWS_REGION: ${{ secrets.AWS_REGION }}
+
     defaults:
       run:
-        working-directory: terraform
+        working-directory: ./Terraform
 
     steps:
       - name: Checkout

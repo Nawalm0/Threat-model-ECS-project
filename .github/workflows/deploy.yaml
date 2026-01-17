@@ -42,6 +42,14 @@
         with:
           terraform_version: 1.6.6
 
+      - name: Debug folders
+        run: |
+          pwd
+          ls -la
+          ls -la modules || true
+          ls -la ./modules || true
+
+
       - name: Terraform init
         run: terraform init
 

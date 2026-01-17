@@ -89,3 +89,7 @@ variable "redirect_status_code" {
     error_message = "Status code must be HTTP_301 (permanent) or HTTP_302 (temporary)."
   }
 }
+
+variable "assign_public_ip" {
+  type = bool
+}

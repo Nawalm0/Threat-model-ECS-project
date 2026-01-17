@@ -53,7 +53,9 @@
 
       - name: Terraform plan
         run: terraform plan -no-color -out=tfplan
+        working-directory: Terraform
 
       - name: Terraform apply (main only)
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve  tfplan
+        working-directory: Terraform

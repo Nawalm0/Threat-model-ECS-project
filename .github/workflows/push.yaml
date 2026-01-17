@@ -33,13 +33,12 @@ jobs:
         run: |
           aws ecr get-login-password --region $AWS_REGION \
             | docker login --username AWS --password-stdin $ECR_REGISTRY
-      - name: Debug, show Dockerfile
+      - name: Build Docker image 
         run: |
-          pwd
-          ls -la
-          echo "---- find dockerfile ----"
-          find . -maxdepth 4 -type f \( -iname "Dockerfile" -o -iname "dockerfile" \) -print
-
+          docker build \
+            --platform linux/amd64 \
+            -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
+            .
 
 
       - name: Push Docker image to ECR

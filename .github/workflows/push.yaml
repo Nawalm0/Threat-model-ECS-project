@@ -35,10 +35,12 @@ jobs:
             | docker login --username AWS --password-stdin $ECR_REGISTRY
 
       - name: Build Docker image
-        run: |
-          docker build --platform linux/amd64 .
-
-            -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ./app
+        run: 
+           docker build \
+            --platform linux/amd64 \
+             -f ./app/Dockerfile \
+             -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
+               ./app
 
       - name: Push Docker image to ECR
         run: |

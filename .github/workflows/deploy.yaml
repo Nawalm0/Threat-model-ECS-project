@@ -4,7 +4,7 @@
   push:
     branches: [main]
     paths:
-      - "terraform/**"
+      - "Terraform/**"
       - ".github/workflows/terraform.yml"
   
   workflow_dispatch:

@@ -52,10 +52,10 @@
         run: terraform init
 
       - name: Terraform plan
-        run: terraform plan -no-color -input=false -out=tfplan
+        run: terraform plan -no-color -input=false -var-file=terraform.tfvars -out=tfplan
         working-directory: Terraform
 
-      - name: Terraform apply (main only)
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -auto-approve  tfplan
+      - name: Terraform apply
+        if: github.ref == 'refs/heads/main'
+        run: terraform apply -no-color -input=false -auto-approve -var-file=terraform.tfvars tfplan
         working-directory: Terraform

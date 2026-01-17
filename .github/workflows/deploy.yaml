@@ -51,4 +51,4 @@
 
       - name: Terraform apply (main only)
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -auto-approve tfplan
+        run: terraform apply -auto-approve  tfplan

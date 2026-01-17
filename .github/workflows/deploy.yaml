@@ -1,27 +1,24 @@
- name: Terraform Deploy
+name: Terraform Deploy
 
- on:
+on:
   push:
     branches: [main]
     paths:
       - "Terraform/**"
       - ".github/workflows/deploy.yml"
-  
   workflow_dispatch:
 
- permissions:
+permissions:
   id-token: write
   contents: read
   pull-requests: write
 
-
-
- jobs:
+jobs:
   terraform:
     runs-on: ubuntu-latest
 
     env:
-     AWS_REGION: ${{ secrets.AWS_REGION }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}
 
     defaults:
       run:
@@ -41,21 +38,19 @@
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.6.6
+
       - name: Download terraform.tfvars
         run: |
-         aws s3 cp \
-         s3://terraform-state-nawal/config/dev/terraform.tfvars \
-         Terraform/terraform.tfvars
-      
+          aws s3 cp \
+            s3://terraform-state-nawal/config/dev/terraform.tfvars \
+            ./terraform.tfvars
 
       - name: Terraform init
         run: terraform init
 
       - name: Terraform plan
         run: terraform plan -no-color -input=false -var-file=terraform.tfvars -out=tfplan
-        working-directory: Terraform
 
       - name: Terraform apply
         if: github.ref == 'refs/heads/main'
-        run: terraform apply -no-color -input=false -auto-approve -var-file=terraform.tfvars tfplan
-        working-directory: Terraform
+        run: terraform apply -no-color -input=false -auto-approve tfplan

@@ -33,8 +33,7 @@ jobs:
         run: |
           aws ecr get-login-password --region $AWS_REGION \
             | docker login --username AWS --password-stdin $ECR_REGISTRY
-
-            - name: Build Docker image
+      - name: Build Docker image 
         run: |
           docker build \
             --platform linux/amd64 \

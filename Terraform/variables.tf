@@ -90,6 +90,3 @@ variable "redirect_status_code" {
   }
 }
 
-variable "assign_public_ip" {
-  type = bool
-}

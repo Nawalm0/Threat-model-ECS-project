@@ -85,4 +85,4 @@ override.tf.json
 .terraformrc
 terraform.rc
 .terraform.lock.hcl
-**/*.terraform.lock.hcl
+**/**/**/.terraform.lock.hcl

@@ -1,20 +1,32 @@
-name: Terraform Deploy
+ name: Terraform Deploy
 
-on:
-
+ on:
+  pull_request:
+    paths:
+      - "terraform/**"
+      - ".github/workflows/terraform.yml"
+  push:
+    branches: ["main"]
+    paths:
+      - "terraform/**"
+      - ".github/workflows/terraform.yml"
   workflow_dispatch:
 
+ permissions:
+  id-token: write
+  contents: read
+  pull-requests: write
 
-env:
+ env:
   AWS_REGION: ${{ secrets.AWS_REGION }}
- 
 
-jobs:
+
+ jobs:
   terraform:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./Terraform
+        working-directory: terraform
 
     steps:
       - name: Checkout
@@ -35,7 +47,7 @@ jobs:
         run: terraform init
 
       - name: Terraform plan
-        run: terraform plan -out=tfplan
+        run: terraform plan -no-color -out=tfplan
 
       - name: Terraform apply (main only)
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'

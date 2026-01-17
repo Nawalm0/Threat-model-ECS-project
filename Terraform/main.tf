@@ -1,5 +1,5 @@
 module "vpc" {
-  source                 = "./modules/vpc"
+  source                 = "../modules/vpc"
   vpc_cidr               = var.vpc_cidr
   project_name           = var.project_name
   public_subnet_az1_cidr = var.public_subnet_az1_cidr
@@ -8,7 +8,7 @@ module "vpc" {
 }
 
 module "security_groups" {
-  source = "./modules/security_groups"
+  source = "../modules/security_groups"
 
   vpc_id             = module.vpc.vpc_id
   app_port           = var.container_port
@@ -17,12 +17,12 @@ module "security_groups" {
 }
 
 module "iam" {
-  source       = "./modules/iam"
+  source       = "../modules/iam"
   project_name = var.project_name
 }
 
 module "alb" {
-  source = "./modules/alb"
+  source = "../modules/alb"
 
   project_name          = var.project_name
   environment           = var.environment
@@ -40,7 +40,7 @@ module "alb" {
 
 
 module "ecs_service" {
-  source = "./modules/ecs_fargate"
+  source = "../modules/ecs_fargate"
 
   project_name  = var.project_name
   service_name  = "${var.project_name}-service"
@@ -64,7 +64,7 @@ module "ecs_service" {
 }
 
 module "acm" {
-  source      = "./modules/acm"
+  source      = "../modules/acm"
   domain_name = var.domain_name
 }
 

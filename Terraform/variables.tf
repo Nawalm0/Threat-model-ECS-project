@@ -69,7 +69,7 @@ variable "task_family" {
 variable "health_check_path" {
   type        = string
   description = "Health check path for your app"
-  default     = "/"
+  default     = "/health"
 }
 
 

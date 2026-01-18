@@ -12,7 +12,7 @@ variable "project_name" {
 variable "environment" {
   description = "Environment name"
   type        = string
-  default     = "dev"
+  
 }
 
 variable "container_port" {
@@ -47,11 +47,18 @@ variable "image_url" {
   type        = string
 }
 
-variable "task_cpu" { type = number }
+variable "task_cpu" { 
+  
+  type = number 
+  }
 
-variable "task_memory" { type = number }
+variable "task_memory" { 
+  type = number
+   }
 
-variable "assign_public_ip" { type = bool }
+variable "assign_public_ip" { 
+  type = bool 
+  }
 
 
 variable "task_family" {
@@ -84,9 +91,6 @@ variable "redirect_status_code" {
   type        = string
   default     = "HTTP_301"
 
-  validation {
-    condition     = contains(["HTTP_301", "HTTP_302"], var.redirect_status_code)
-    error_message = "Status code must be HTTP_301 (permanent) or HTTP_302 (temporary)."
-  }
+
 }
 

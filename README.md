@@ -1,7 +1,7 @@
 # End-to-End Deployment of Threat-Composer on AWS ECS Fargate
 
 This project demonstrates the deployment of Threat-Composer, an open-source threat-modelling tool, using AWS ECS Fargate, Terraform, and GitHub Actions CI/CD.
-The setup follows modern cloud and DevOps best practices, including Infrastructure as Code and OIDC authentication
+The setup follows modern cloud and DevOps best practices.
 
 ## Architecture Diagram
 ![Architecture Diagram](images/Arch%20Diagram.png)
@@ -11,7 +11,6 @@ The setup follows modern cloud and DevOps best practices, including Infrastructu
 - Deployed using AWS ECS Fargate (serverless containers)
 - Secured with HTTPS (ACM + ALB)
 - Fully automated using Terraform and GitHub Actions
-- Uses OIDC for AWS authentication (no static AWS keys)
 
 ## Directory Structure
 ```bash

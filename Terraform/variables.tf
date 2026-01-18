@@ -12,7 +12,7 @@ variable "project_name" {
 variable "environment" {
   description = "Environment name"
   type        = string
-  
+  default     = "dev"
 }
 
 variable "container_port" {
@@ -48,17 +48,16 @@ variable "image_url" {
 }
 
 variable "task_cpu" { 
-  
   type = number 
   }
 
-variable "task_memory" { 
-  type = number
+variable "task_memory" {
+   type = number 
    }
 
-variable "assign_public_ip" { 
-  type = bool 
-  }
+variable "assign_public_ip" {
+   type = bool 
+   }
 
 
 variable "task_family" {
@@ -90,7 +89,6 @@ variable "redirect_status_code" {
   description = "HTTP status code for redirect from HTTP to HTTPS"
   type        = string
   default     = "HTTP_301"
-
 
 }
 
